@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DreamFit Gym Center · La Asunción, Margarita</title>
+<meta name="description" content="Gimnasio en Calle Matasiete, La Asunción, Isla de Margarita. Entrenador de sala, rutinas dirigidas y planes desde $12,5 al mes. Escríbenos por WhatsApp.">
+<meta property="og:title" content="DreamFit Gym Center · La Asunción">
+<meta property="og:description" content="Entrenador de sala, rutinas dirigidas y una comunidad que te empuja. Planes desde $12,5.">
+<meta property="og:image" content="img/sala.jpg">
+<meta name="theme-color" content="#050816">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#050816; --fondo2:#0a1030; --tarjeta:#0e1638; --borde:#1d2a5c;
+  --azul:#2f6bff; --azul2:#5aa2ff; --neon:#4dc3ff; --texto:#e8edff; --suave:#9aa6cc;
+  --wa:#25d366; --radio:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--fondo);color:var(--texto);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,.marca{font-family:Rajdhani,Inter,sans-serif;letter-spacing:.02em;line-height:1.1}
+.contenedor{width:min(1120px,100% - 32px);margin-inline:auto}
+section{padding:88px 0}
+.etiqueta{display:inline-block;color:var(--neon);font-size:.8rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px}
+.titulo{font-size:clamp(2rem,5vw,3rem);margin-bottom:14px}
+.titulo span{color:var(--azul2)}
+.intro{color:var(--suave);max-width:620px;margin-bottom:40px}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:600;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--wa);color:#04210f;box-shadow:0 8px 30px rgba(37,211,102,.3)}
+.btn-azul{background:linear-gradient(135deg,var(--azul),var(--neon));color:#fff;box-shadow:0 8px 30px rgba(47,107,255,.35)}
+.btn-borde{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+.btn-borde:hover{border-color:var(--neon);color:var(--neon)}
+
+/* Navegación */
+.nav{position:fixed;inset:0 0 auto;z-index:50;background:rgba(5,8,22,.75);backdrop-filter:blur(12px);border-bottom:1px solid rgba(77,195,255,.12)}
+.nav .contenedor{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav img{height:44px;width:auto;border-radius:6px}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:.93rem;color:var(--suave)}
+.nav ul a:hover{color:#fff}
+.nav .btn{padding:9px 18px;font-size:.9rem}
+.menu-btn{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:8px}
+.menu-btn svg{width:26px;height:26px}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:110px 0 70px;background:url(img/sala.jpg) center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,22,.55) 0%,rgba(5,8,22,.78) 55%,var(--fondo) 100%),radial-gradient(ellipse at 20% 30%,rgba(47,107,255,.35),transparent 60%)}
+.hero .contenedor{position:relative}
+.hero h1{font-size:clamp(2.8rem,9vw,5.6rem);text-transform:uppercase;margin-bottom:6px}
+.hero h1 b{color:var(--azul2);text-shadow:0 0 30px rgba(77,195,255,.6)}
+.hero .lema{font-family:Rajdhani,Inter,sans-serif;font-size:clamp(1.3rem,3.4vw,1.9rem);font-weight:600;margin-bottom:16px}
+.hero p{color:#c9d3f5;max-width:560px;margin-bottom:30px;font-size:1.05rem}
+.acciones{display:flex;flex-wrap:wrap;gap:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.chip{display:flex;align-items:center;gap:8px;background:rgba(14,22,56,.7);border:1px solid var(--borde);padding:8px 14px;border-radius:999px;font-size:.88rem;color:#cdd6f6}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--neon);box-shadow:0 0 10px var(--neon)}
+
+/* Incluye */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:linear-gradient(180deg,var(--tarjeta),var(--fondo2));border:1px solid var(--borde);border-radius:var(--radio);padding:28px}
+.card .ico{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:rgba(47,107,255,.15);color:var(--neon);margin-bottom:16px}
+.card .ico svg{width:24px;height:24px}
+.card h3{font-size:1.4rem;margin-bottom:6px}
+.card p{color:var(--suave);font-size:.95rem}
+
+/* Planes */
+#planes{background:radial-gradient(ellipse at 50% 0%,rgba(47,107,255,.18),transparent 65%)}
+.planes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.plan{position:relative;display:flex;flex-direction:column;background:var(--tarjeta);border:1px solid var(--borde);border-radius:20px;padding:32px 28px}
+.plan.destacado{border-color:var(--azul);box-shadow:0 0 0 1px var(--azul),0 20px 60px rgba(47,107,255,.25);transform:translateY(-8px)}
+.plan .sello{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--azul),var(--neon));font-size:.75rem;font-weight:600;padding:4px 14px;border-radius:999px;letter-spacing:.05em;white-space:nowrap}
+.plan h3{font-size:1.5rem;text-transform:uppercase;color:var(--azul2)}
+.precio{font-family:Rajdhani,Inter,sans-serif;font-size:3.4rem;font-weight:700;line-height:1;margin:10px 0 2px}
+.precio small{font-size:1.1rem;color:var(--suave);font-weight:600}
+.nota-precio{color:var(--suave);font-size:.88rem;margin-bottom:20px}
+.plan ul{list-style:none;display:grid;gap:10px;margin-bottom:26px;flex:1}
+.plan li{display:flex;gap:10px;font-size:.95rem}
+.plan li svg{width:18px;height:18px;flex:none;color:var(--neon);margin-top:3px}
+.plan li.extra{color:var(--suave)}
+.plan .btn{width:100%}
+.regla{margin-top:32px;display:flex;gap:14px;align-items:flex-start;background:rgba(14,22,56,.6);border:1px dashed var(--borde);border-radius:var(--radio);padding:18px 22px;color:#cdd6f6;font-size:.95rem}
+.regla svg{width:22px;height:22px;flex:none;color:var(--neon);margin-top:2px}
+
+/* Cambios */
+.cambios{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cambio{border-radius:var(--radio);overflow:hidden;background:var(--tarjeta);border:1px solid var(--borde);display:flex;flex-direction:column}
+.cambio .foto{aspect-ratio:4/5;overflow:hidden;background:#000}
+.cambio img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.cambio:hover img{transform:scale(1.04)}
+.cambio figcaption{padding:12px 16px 14px;border-top:1px solid var(--borde)}
+.cambio strong{font-family:Rajdhani,Inter,sans-serif;font-size:1.7rem;color:var(--neon);display:block;line-height:1}
+.cambio span{font-size:.85rem;color:#cdd6f6}
+.fuente{margin-top:18px;color:var(--suave);font-size:.85rem}
+.fuente a{color:var(--azul2)}
+
+/* Galerías */
+.galeria{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:16px;height:520px}
+.galeria img{width:100%;height:100%;object-fit:cover;border-radius:var(--radio);border:1px solid var(--borde)}
+.galeria img:first-child{grid-row:span 2}
+.comunidad{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.comunidad figure{border-radius:var(--radio);overflow:hidden;border:1px solid var(--borde);aspect-ratio:3/4;position:relative}
+.comunidad img{width:100%;height:100%;object-fit:cover}
+.comunidad figcaption{position:absolute;inset:auto 0 0;padding:30px 14px 12px;background:linear-gradient(transparent,rgba(5,8,22,.9));font-weight:600;font-size:.92rem}
+
+/* Equipo */
+.equipo{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.equipo img{border-radius:20px;border:1px solid var(--borde);box-shadow:0 30px 80px rgba(47,107,255,.2)}
+.lista{list-style:none;display:grid;gap:14px;margin:24px 0 30px}
+.lista li{display:flex;gap:12px}
+.dias{font-family:Rajdhani,Inter,sans-serif;font-weight:700;font-size:1.3rem;color:var(--azul2);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em}
+.coaches{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0 6px}
+.coach{background:var(--tarjeta);border:1px solid var(--borde);border-radius:14px;padding:14px 16px}
+.coach b{font-family:Rajdhani,Inter,sans-serif;font-size:1.3rem;display:block;line-height:1.2}
+.coach span{color:var(--suave);font-size:.85rem}
+.coach em{font-style:normal;color:var(--neon);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.lista svg{width:22px;height:22px;flex:none;color:var(--neon);margin-top:2px}
+
+/* Horarios y contacto */
+#contacto{background:linear-gradient(180deg,var(--fondo),var(--fondo2))}
+.contacto{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.horarios{display:grid;gap:12px}
+.horario{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--tarjeta);border:1px solid var(--borde);border-radius:14px;padding:16px 20px}
+.horario b{font-family:Rajdhani,Inter,sans-serif;font-size:1.25rem}
+.horario span{color:var(--suave);font-size:.85rem;display:block}
+.horario time{font-family:Rajdhani,Inter,sans-serif;font-weight:700;font-size:1.2rem;color:var(--azul2);white-space:nowrap}
+.datos{display:grid;gap:12px;margin-top:12px}
+.dato{display:flex;gap:14px;align-items:center;background:var(--tarjeta);border:1px solid var(--borde);border-radius:14px;padding:14px 18px;transition:border-color .2s}
+a.dato:hover{border-color:var(--azul)}
+.dato .ico{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;background:rgba(47,107,255,.15);color:var(--neon);flex:none}
+.dato .ico svg{width:20px;height:20px}
+.dato small{display:block;color:var(--suave);font-size:.8rem}
+.cta{background:linear-gradient(135deg,#1638b8,var(--azul) 60%,#2a8cff);border-radius:22px;padding:40px 32px;display:flex;flex-direction:column;justify-content:center;gap:14px;box-shadow:0 30px 80px rgba(47,107,255,.3)}
+.cta h3{font-size:2.2rem}
+.cta p{color:#dbe5ff}
+.cta .btn-wa{background:#fff;color:#0b2a8a;box-shadow:none}
+.cta .btn-borde{border-color:rgba(255,255,255,.6)}
+.mapa{margin-top:24px;border-radius:var(--radio);overflow:hidden;border:1px solid var(--borde);height:340px;background:var(--tarjeta)}
+.mapa{display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,rgba(47,107,255,.25),transparent 60%),repeating-linear-gradient(0deg,transparent 0 38px,rgba(77,195,255,.07) 38px 39px),repeating-linear-gradient(90deg,transparent 0 38px,rgba(77,195,255,.07) 38px 39px),var(--tarjeta)}
+.mapa-portada{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:24px}
+.mapa-portada .ico{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:rgba(47,107,255,.2);color:var(--neon);box-shadow:0 0 30px rgba(77,195,255,.35);margin-bottom:6px}
+.mapa-portada .ico svg{width:28px;height:28px}
+.mapa-portada b{font-family:Rajdhani,Inter,sans-serif;font-size:1.5rem}
+.mapa-portada span{color:var(--suave);margin-bottom:12px}
+.mapa-portada .acciones{justify-content:center}
+.mapa-portada button{border:0;cursor:pointer;font:inherit;font-weight:600}
+.mapa iframe{width:100%;height:100%;border:0;filter:invert(.9) hue-rotate(180deg) saturate(.8)}
+.miembros{margin-top:24px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--tarjeta);border:1px solid var(--borde);border-radius:var(--radio);padding:22px 24px}
+.miembros h3{font-size:1.4rem}
+.miembros p{color:var(--suave);font-size:.92rem}
+.consulta{display:flex;gap:10px;flex-wrap:wrap}
+.consulta input{background:var(--fondo);border:1px solid var(--borde);color:#fff;border-radius:999px;padding:12px 20px;font:inherit;font-size:1.05rem;letter-spacing:.2em;text-transform:uppercase;width:190px;outline:none}
+.consulta input:focus{border-color:var(--neon);box-shadow:0 0 0 3px rgba(77,195,255,.2)}
+.consulta input::placeholder{letter-spacing:.05em;text-transform:none;color:var(--suave)}
+.consulta button{border:0;cursor:pointer;font:inherit;font-weight:600}
+@media (max-width:480px){.consulta{width:100%}.consulta input{flex:1;width:auto;min-width:0}}
+
+footer{border-top:1px solid var(--borde);padding:28px 0;color:var(--suave);font-size:.85rem}
+footer .contenedor{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+footer img{height:34px;width:auto}
+
+.wa-flotante{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:transform .2s}
+.wa-flotante:hover{transform:scale(1.08)}
+.wa-flotante svg{width:30px;height:30px;color:#fff}
+
+.aparece{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.aparece.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.aparece{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:900px){
+  .nav ul,.nav .btn{display:none}
+  .menu-btn{display:block}
+  .nav.abierto ul{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(5,8,22,.97);padding:18px 24px 24px;gap:18px;font-size:1.05rem;border-bottom:1px solid var(--borde)}
+  .grid3,.planes{grid-template-columns:1fr}
+  .plan.destacado{transform:none}
+  .planes{gap:28px}
+  .cambios{grid-template-columns:repeat(2,1fr)}
+  .galeria{grid-template-columns:1fr 1fr;grid-template-rows:auto;height:auto}
+  .galeria img:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:4/3}
+  .galeria img{aspect-ratio:3/4}
+  .comunidad{grid-template-columns:repeat(2,1fr)}
+  .equipo,.contacto{grid-template-columns:1fr}
+  section{padding:64px 0}
+}
+@media (max-width:480px){
+  .acciones .btn{width:100%}
+  .cambio figcaption{padding:10px}
+  .cambio strong{font-size:1.4rem}
+  .cambio span{font-size:.75rem}
+  .cambios{gap:10px}
+  .cta{padding:30px 22px}
+  .cta h3{font-size:1.8rem}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.2.1 12 .1 5.5.1.2 5.4.2 11.9c0 2.1.5 4.1 1.6 5.9L.1 23.9l6.3-1.6c1.7.9 3.7 1.4 5.6 1.4 6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.4-8.3z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></g></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></g></symbol>
+</svg>
+
+<nav class="nav" id="nav">
+  <div class="contenedor">
+    <a href="#inicio" aria-label="DreamFit, inicio"><img src="img/logo.png" alt="DreamFit Gym Center"></a>
+    <ul>
+      <li><a href="#planes">Planes</a></li>
+      <li><a href="#cambios">Cambios</a></li>
+      <li><a href="#instalaciones">El gym</a></li>
+      <li><a href="#comunidad">Comunidad</a></li>
+      <li><a href="#contacto">Horarios y contacto</a></li>
+      <li><a href="#miembros">Mi estado</a></li>
+    </ul>
+    <a class="btn btn-wa" data-wa="Hola, quiero información sobre los planes de DreamFit" href="#"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+    <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="contenedor">
+    <span class="etiqueta">La Asunción · Isla de Margarita</span>
+    <h1>Dream<b>Fit</b><br>Gym Center</h1>
+    <div class="lema">Entrena con guía. Cambia de verdad.</div>
+    <p>Entrenador de sala, rutinas dirigidas y una comunidad que te empuja a seguir. Aquí no entrenas solo.</p>
+    <div class="acciones">
+      <a class="btn btn-wa" data-wa="Hola, quiero empezar a entrenar en DreamFit. ¿Qué necesito?" href="#"><svg><use href="#i-wa"/></svg>Quiero empezar</a>
+      <a class="btn btn-borde" href="#planes">Ver planes y precios</a>
+    </div>
+    <div class="chips">
+      <div class="chip"><i></i>Desde $12,5 al mes</div>
+      <div class="chip"><i></i>Lunes a viernes · 6 am a 9 pm</div>
+      <div class="chip"><i></i>Entrenador en sala</div>
+    </div>
+  </div>
+</header>
+
+<section id="incluye">
+  <div class="contenedor">
+    <span class="etiqueta aparece">Todos los planes incluyen</span>
+    <h2 class="titulo aparece">No llegas a <span>adivinar</span> qué hacer</h2>
+    <p class="intro aparece">Desde el primer día alguien te guía: te armamos la rutina, te corregimos la técnica y vemos tu progreso.</p>
+    <div class="grid3">
+      <div class="card aparece"><div class="ico"><svg><use href="#i-user"/></svg></div><h3>Entrenador de sala</h3><p>Siempre hay un entrenador en el piso para ayudarte con la técnica, las cargas y tus dudas.</p></div>
+      <div class="card aparece"><div class="ico"><svg><use href="#i-list"/></svg></div><h3>Rutina dirigida</h3><p>Rutinas armadas según tu objetivo, para entrenar solo o en grupo. Ganar masa, bajar de peso o tonificar.</p></div>
+      <div class="card aparece"><div class="ico"><svg><use href="#i-bolt"/></svg></div><h3>Entrenamiento personalizado</h3><p>¿Quieres seguimiento uno a uno? Tenemos entrenamientos personalizados con costo adicional.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="planes">
+  <div class="contenedor">
+    <span class="etiqueta aparece">Planes mensuales</span>
+    <h2 class="titulo aparece">Elige tu <span>plan</span></h2>
+    <p class="intro aparece">Precios claros, en dólares. Entrenar acompañado sale más barato.</p>
+    <div class="planes">
+      <article class="plan aparece">
+        <h3>Individual</h3>
+        <div class="precio">$20 <small>/ mes</small></div>
+        <div class="nota-precio">Una persona</div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Entrenador de sala</li>
+          <li><svg><use href="#i-check"/></svg>Rutina dirigida</li>
+          <li class="extra"><svg><use href="#i-plus"/></svg>Personalizado (costo adicional)</li>
+        </ul>
+        <a class="btn btn-borde" data-wa="Hola, me interesa el plan Individual de $20" href="#">Lo quiero</a>
+      </article>
+      <article class="plan destacado aparece">
+        <span class="sello">Más elegido</span>
+        <h3>Pareja</h3>
+        <div class="precio">$30 <small>/ mes</small></div>
+        <div class="nota-precio">$15 cada uno · un solo pago</div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Entrenador de sala</li>
+          <li><svg><use href="#i-check"/></svg>Rutina dirigida para los dos</li>
+          <li class="extra"><svg><use href="#i-plus"/></svg>Personalizado (costo adicional)</li>
+        </ul>
+        <a class="btn btn-azul" data-wa="Hola, me interesa el plan Pareja de $30" href="#">Lo queremos</a>
+      </article>
+      <article class="plan aparece">
+        <h3>Grupal</h3>
+        <div class="precio">$12,5 <small>c/u</small></div>
+        <div class="nota-precio">Por persona · un solo pago por el grupo</div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Entrenador de sala</li>
+          <li><svg><use href="#i-check"/></svg>Rutina dirigida grupal</li>
+          <li class="extra"><svg><use href="#i-plus"/></svg>Personalizado (costo adicional)</li>
+        </ul>
+        <a class="btn btn-borde" data-wa="Hola, somos un grupo y nos interesa el plan Grupal" href="#">Somos un grupo</a>
+      </article>
+    </div>
+    <div class="regla aparece">
+      <svg><use href="#i-cal"/></svg>
+      <div><b>¿Cuándo pagas?</b> Si te inscribes entre el 1 y el 15, tu mensualidad vence el 15 de cada mes; si entras después del 15, vence el 30. Pregunta por las promociones vigentes.</div>
+    </div>
+  </div>
+</section>
+
+<section id="cambios">
+  <div class="contenedor">
+    <span class="etiqueta aparece">Resultados de nuestros miembros</span>
+    <h2 class="titulo aparece">Cambios <span>reales</span></h2>
+    <p class="intro aparece">Ganar masa o bajar de peso: cada cuerpo es distinto, y cada plan también. Estos son algunos de nuestros miembros.</p>
+    <div class="cambios">
+      <figure class="cambio aparece"><div class="foto"><img src="img/t-12kg.jpg" alt="Miembro de DreamFit: de 127 kg a 115 kg" loading="lazy"></div><figcaption><strong>−12 kg</strong><span>De 127 a 115 kg</span></figcaption></figure>
+      <figure class="cambio aparece"><div class="foto"><img src="img/t-ganancia20.jpg" alt="Miembro de DreamFit: de 50 kg a 70 kg" loading="lazy"></div><figcaption><strong>+20 kg</strong><span>De 50 a 70 kg de masa</span></figcaption></figure>
+      <figure class="cambio aparece"><div class="foto"><img src="img/t-8semanas.jpg" alt="Miembro de DreamFit: de 98,8 kg a 90,5 kg en 8 semanas" loading="lazy"></div><figcaption><strong>−8,3 kg</strong><span>En 8 semanas</span></figcaption></figure>
+      <figure class="cambio aparece"><div class="foto"><img src="img/t-2meses.jpg" alt="Miembro de DreamFit: de 43 kg a 47,6 kg en 2 meses" loading="lazy"></div><figcaption><strong>+4,6 kg</strong><span>En 2 meses de trabajo</span></figcaption></figure>
+      <figure class="cambio aparece"><div class="foto"><img src="img/t-ganancia8.jpg" alt="Miembro de DreamFit: de 43 kg a 51 kg" loading="lazy"></div><figcaption><strong>+8 kg</strong><span>De 43 a 51 kg</span></figcaption></figure>
+      <figure class="cambio aparece"><div class="foto"><img src="img/t-cambio.jpg" alt="Miembro de DreamFit antes y después" loading="lazy"></div><figcaption><strong>Constancia</strong><span>Nunca es tarde para empezar</span></figcaption></figure>
+    </div>
+    <p class="fuente aparece">Más cambios en las historias destacadas de <a href="https://www.instagram.com/dreamfit.mgta/" target="_blank" rel="noopener">@dreamfit.mgta</a>.</p>
+  </div>
+</section>
+
+<section id="instalaciones">
+  <div class="contenedor">
+    <span class="etiqueta aparece">El gym</span>
+    <h2 class="titulo aparece">Zona de <span>musculación</span></h2>
+    <p class="intro aparece">Racks, bancos, poleas, mancuernas y discos. Un espacio con ventiladores y aire acondicionado para entrenar a gusto.</p>
+    <div class="galeria aparece">
+      <img src="img/sala.jpg" alt="Sala de pesas de DreamFit" loading="lazy">
+      <img src="img/musculacion.jpg" alt="Entrada a la zona de musculación" loading="lazy">
+      <img src="img/entrada.jpg" alt="Miembros entrenando en DreamFit" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="comunidad">
+  <div class="contenedor">
+    <span class="etiqueta aparece">Más que un gym</span>
+    <h2 class="titulo aparece">Una <span>comunidad</span> que se mueve junta</h2>
+    <p class="intro aparece">Organizamos salidas y retos fuera del gym: subidas al Copey, caminatas por la isla y los viernes de entrenamiento en grupo.</p>
+    <div class="comunidad">
+      <figure class="aparece"><img src="img/paseo-copey.jpg" alt="Grupo de DreamFit en el Cerro El Copey" loading="lazy"><figcaption>Subida al Copey</figcaption></figure>
+      <figure class="aparece"><img src="img/paseo-montana.jpg" alt="Grupo de DreamFit en la montaña" loading="lazy"><figcaption>Caminatas en grupo</figcaption></figure>
+      <figure class="aparece"><img src="img/viernes.jpg" alt="Viernes de entrenamiento en DreamFit" loading="lazy"><figcaption>Viernes de entrenamiento</figcaption></figure>
+      <figure class="aparece"><img src="img/paseo-playa.jpg" alt="Celebración de DreamFit en la playa" loading="lazy"><figcaption>Celebraciones y paseos</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="equipo">
+  <div class="contenedor equipo">
+    <img class="aparece" src="img/equipo.jpg" alt="Aaron Ortiz y Elaine Rangel, entrenadores de DreamFit" loading="lazy">
+    <div class="aparece">
+      <span class="etiqueta">Nuestro equipo</span>
+      <h2 class="titulo">Entrenadores que te <span>acompañan</span></h2>
+      <p class="intro" style="margin-bottom:0">Conocen tu nombre, tu objetivo y tu progreso. Te ayudan a empezar con buena técnica y a no rendirte.</p>
+      <div class="coaches">
+        <div class="coach"><em>Turno tarde</em><b>Aaron Ortiz</b><span>Entrenador</span></div>
+        <div class="coach"><em>Turno mañana</em><b>Elaine Rangel</b><span>Entrenadora</span></div>
+      </div>
+      <ul class="lista">
+        <li><svg><use href="#i-check"/></svg>Evaluación y rutina según tu objetivo</li>
+        <li><svg><use href="#i-check"/></svg>Seguimiento de peso y medidas</li>
+        <li><svg><use href="#i-check"/></svg>Planes para ganar masa, bajar de peso o tonificar</li>
+      </ul>
+      <a class="btn btn-azul" data-wa="Hola, quiero que un entrenador me arme mi rutina" href="#">Habla con un entrenador</a>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="contenedor">
+    <span class="etiqueta aparece">Horarios y contacto</span>
+    <h2 class="titulo aparece">Te esperamos en <span>DreamFit</span></h2>
+    <div class="contacto" style="margin-top:32px">
+      <div class="aparece">
+        <p class="dias">Lunes a viernes</p>
+        <div class="horarios">
+          <div class="horario"><div><b>Mañana</b><span>Horario AM</span></div><time>6:00 a 12:00 m</time></div>
+          <div class="horario"><div><b>Mediodía</b><span>Horario especial</span></div><time>12:00 a 3:00 pm</time></div>
+          <div class="horario"><div><b>Tarde</b><span>Horario PM</span></div><time>3:00 a 9:00 pm</time></div>
+        </div>
+        <div class="datos">
+          <a class="dato" data-wa="Hola, quiero información sobre DreamFit" href="#"><div class="ico"><svg><use href="#i-wa"/></svg></div><div><small>WhatsApp</small>0412-356-7805</div></a>
+          <a class="dato" href="tel:+584120922720"><div class="ico"><svg><use href="#i-tel"/></svg></div><div><small>Teléfono</small>0412-092-2720</div></a>
+          <a class="dato" href="https://www.instagram.com/dreamfit.mgta/" target="_blank" rel="noopener"><div class="ico"><svg><use href="#i-ig"/></svg></div><div><small>Instagram</small>@dreamfit.mgta</div></a>
+          <a class="dato" href="https://maps.app.goo.gl/N3ZvXh6ixvjTLaaq9" target="_blank" rel="noopener"><div class="ico"><svg><use href="#i-pin"/></svg></div><div><small>Ubicación · Ver en Google Maps</small>Calle Matasiete, La Asunción, Nueva Esparta</div></a>
+        </div>
+      </div>
+      <div class="cta aparece">
+        <h3>¿Listo para empezar?</h3>
+        <p>Escríbenos, cuéntanos tu objetivo y te decimos qué plan te conviene. Ven a conocer el gym.</p>
+        <a class="btn btn-wa" data-wa="Hola, quiero empezar a entrenar en DreamFit. Mi objetivo es: " href="#"><svg><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
+        <a class="btn btn-borde" href="https://www.instagram.com/dreamfit.mgta/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Ver Instagram</a>
+      </div>
+    </div>
+    <div class="mapa aparece" id="mapa">
+      <div class="mapa-portada">
+        <div class="ico"><svg><use href="#i-pin"/></svg></div>
+        <b>DreamFit Gym Center</b>
+        <span>Calle Matasiete, La Asunción, Nueva Esparta</span>
+        <div class="acciones">
+          <button class="btn btn-azul" type="button" id="cargar-mapa">Ver mapa aquí</button>
+          <a class="btn btn-borde" href="https://maps.app.goo.gl/N3ZvXh6ixvjTLaaq9" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        </div>
+      </div>
+    </div>
+    <div class="miembros aparece" id="miembros">
+      <div><h3>¿Ya eres miembro?</h3><p>Consulta si estás al día y cuándo vence tu mensualidad con el código que te enviamos por WhatsApp.</p></div>
+      <form class="consulta" id="form-consulta">
+        <input id="codigo-socio" placeholder="Tu código" aria-label="Tu código de socio" maxlength="12" autocomplete="off" autocapitalize="characters" spellcheck="false" required>
+        <button class="btn btn-azul" type="submit">Consultar</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="contenedor">
+    <img src="img/logo.png" alt="DreamFit Gym Center">
+    <span>© <span id="anio">2026</span> DreamFit Gym Center · La Asunción, Isla de Margarita</span>
+  </div>
+</footer>
+
+<a class="wa-flotante" data-wa="Hola, quiero información sobre DreamFit" href="#" aria-label="Escribir por WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<script>
+  const WHATSAPP = '584123567805';
+  // Dirección del sistema GymFlow del gimnasio (donde vive el portal /estado)
+  const SISTEMA = 'https://PON-AQUI-LA-URL-DE-GYMFLOW.vercel.app';
+  document.querySelectorAll('[data-wa]').forEach(a => {
+    a.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(a.dataset.wa);
+    a.target = '_blank'; a.rel = 'noopener';
+  });
+  document.getElementById('cargar-mapa').addEventListener('click', () => {
+    document.getElementById('mapa').innerHTML = '<iframe title="Ubicación de DreamFit Gym Center en Google Maps" src="https://maps.google.com/maps?q=DREAM+FIT,+C.+Matasiete,+La+Asunci%C3%B3n+6311,+Nueva+Esparta&z=17&output=embed" allowfullscreen></iframe>';
+  });
+  document.getElementById('form-consulta').addEventListener('submit', e => {
+    e.preventDefault();
+    const codigo = document.getElementById('codigo-socio').value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+    if (codigo) window.location.href = SISTEMA + '/estado/' + codigo;
+  });
+  document.getElementById('anio').textContent = new Date().getFullYear();
+
+  const nav = document.getElementById('nav');
+  const menu = nav.querySelector('.menu-btn');
+  menu.addEventListener('click', () => {
+    const abierto = nav.classList.toggle('abierto');
+    menu.setAttribute('aria-expanded', abierto);
+  });
+  nav.querySelectorAll('ul a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('abierto'); menu.setAttribute('aria-expanded', false);
+  }));
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    }), { threshold: .12 });
+    document.querySelectorAll('.aparece').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.aparece').forEach(el => el.classList.add('visible'));
+  }
+</script>
+</body>
+</html>
