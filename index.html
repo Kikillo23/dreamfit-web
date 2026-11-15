@@ -303,17 +303,47 @@ a.dato:hover{transform:translateX(4px);box-shadow:0 10px 30px rgba(47,107,255,.1
   background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(90,162,255,.13),transparent 62%)}
 .luz:hover::after{opacity:1}
 
-/* ===== Efectos: cinta de palabras en movimiento ===== */
-.cinta{overflow:hidden;border-block:1px solid var(--borde);background:linear-gradient(90deg,rgba(47,107,255,.10),rgba(77,195,255,.05),rgba(47,107,255,.10));
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.cinta div{display:flex;width:max-content;animation:cinta 32s linear infinite}
-.cinta:hover div{animation-play-state:paused}
-.cinta span{font-family:Rajdhani,Inter,sans-serif;font-weight:700;font-size:clamp(1.1rem,2.6vw,1.6rem);letter-spacing:.14em;text-transform:uppercase;
-  padding:16px 0;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(154,166,204,.55)}
-.cinta span:nth-child(odd){color:var(--texto);-webkit-text-stroke:0}
-.cinta span::after{content:"✦";margin:0 26px;color:var(--neon);-webkit-text-stroke:0;font-size:.7em;vertical-align:middle}
-@keyframes cinta{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.cinta div{animation:none}}
+
+/* =========================================================
+   Tema cine: chispas de energía, pulso y vidrio (misma identidad azul neón)
+   ========================================================= */
+:root{--fondo:#03050f;--vidrio:linear-gradient(160deg,rgba(120,160,255,.11),rgba(120,160,255,.03));--borde:rgba(120,160,255,.18)}
+body{background-color:var(--fondo);background-image:radial-gradient(50% 40% at 90% 30%,rgba(47,107,255,.16),transparent 70%),radial-gradient(45% 40% at -5% 70%,rgba(77,195,255,.1),transparent 70%);background-attachment:fixed}
+.nav{background:rgba(3,5,15,.5);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3)}
+.nav.con-scroll{background:rgba(3,5,15,.84)}
+
+.hero{isolation:isolate}
+.hero::before{background:linear-gradient(90deg,rgba(3,5,15,.86) 0,rgba(3,5,15,.5) 55%,rgba(3,5,15,.3) 100%),linear-gradient(180deg,rgba(3,5,15,.35) 0,rgba(3,5,15,.55) 60%,var(--fondo) 100%),radial-gradient(ellipse at 20% 30%,rgba(47,107,255,.4),transparent 60%)}
+.hero-cv{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
+.hero h1{font-size:clamp(3rem,10vw,6.6rem);line-height:.92;letter-spacing:.01em;text-shadow:0 6px 50px rgba(0,0,0,.6)}
+.hero h1 b{background:linear-gradient(100deg,#5aa2ff 0,#9fe1ff 40%,#fff 50%,#9fe1ff 60%,#5aa2ff 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 26px rgba(77,195,255,.65));animation:destello 5s ease-in-out infinite}
+@keyframes destello{0%,55%{background-position:120% 0}100%{background-position:-120% 0}}
+.hero .etiqueta{background:rgba(120,160,255,.12);border:1px solid rgba(120,160,255,.3);padding:6px 14px;border-radius:999px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);margin-bottom:18px}
+.chip{background:rgba(120,160,255,.1);border-color:rgba(120,160,255,.26);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(255,255,255,.08) inset}
+.btn-borde{background:rgba(255,255,255,.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.btn-azul{box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 10px 34px rgba(47,107,255,.5)}
+
+/* Cinta de palabras */
+.cinta{overflow:hidden;padding:22px 0;border-block:1px solid var(--borde);background:rgba(120,160,255,.04);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.cinta-pista{display:flex;gap:40px;width:max-content;animation:corre 32s linear infinite;font-family:Rajdhani,Inter,sans-serif;font-weight:700;font-size:clamp(1.6rem,4vw,2.6rem);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;line-height:1}
+.cinta-pista span{display:inline-flex;align-items:center;gap:40px;color:transparent;-webkit-text-stroke:1.2px rgba(140,180,255,.55)}
+.cinta-pista span:nth-child(3n+1){color:#e8edff;-webkit-text-stroke:0}
+.cinta-pista span::after{content:"";width:10px;height:10px;border-radius:2px;background:var(--neon);box-shadow:0 0 14px var(--neon);transform:rotate(45deg)}
+@keyframes corre{to{transform:translateX(-50%)}}
+
+.card,.plan,.coach,.horario,.dato,.cambio,.miembros,.regla{background:var(--vidrio);border-color:var(--borde);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(255,255,255,.07) inset,0 24px 50px -32px rgba(0,0,0,.9)}
+.plan.destacado{background:linear-gradient(180deg,rgba(47,107,255,.34),rgba(120,160,255,.05) 62%);box-shadow:0 0 0 1px var(--azul),0 1px 0 rgba(255,255,255,.18) inset,0 30px 80px -20px rgba(47,107,255,.6);animation:late 4s ease-in-out infinite}
+@keyframes late{50%{box-shadow:0 0 0 1px var(--neon),0 1px 0 rgba(255,255,255,.18) inset,0 30px 100px -14px rgba(77,195,255,.7)}}
+.precio{filter:drop-shadow(0 0 22px rgba(77,195,255,.35))}
+.titulo{font-size:clamp(2.2rem,5.4vw,3.4rem)}
+.titulo span{background:linear-gradient(100deg,var(--azul2),var(--neon));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(77,195,255,.35))}
+.cambio strong{text-shadow:0 0 22px rgba(77,195,255,.55)}
+.galeria img,.comunidad figure,.equipo img{border-color:rgba(120,160,255,.22);box-shadow:0 30px 70px -30px rgba(47,107,255,.5)}
+.cta{background:radial-gradient(120% 140% at 100% 0,rgba(255,255,255,.22),transparent 55%),linear-gradient(135deg,#1638b8,var(--azul) 60%,#2a8cff);box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 40px 90px -20px rgba(47,107,255,.6)}
+.consulta input{background:rgba(0,0,0,.35)}
+#contacto{background:transparent}
+@media (max-width:900px){.hero::before{background:linear-gradient(180deg,rgba(3,5,15,.6) 0,rgba(3,5,15,.78) 55%,var(--fondo) 100%),radial-gradient(ellipse at 20% 30%,rgba(47,107,255,.35),transparent 60%)}}
+@media (prefers-reduced-motion:reduce){.cinta-pista{animation:none}}
 </style>
 </head>
 <body>
@@ -349,6 +379,7 @@ a.dato:hover{transform:translateX(4px);box-shadow:0 10px 30px rgba(47,107,255,.1
 </nav>
 
 <header class="hero" id="inicio">
+  <canvas class="hero-cv" id="escena" aria-hidden="true"></canvas>
   <div class="contenedor">
     <span class="etiqueta">La Asunción · Isla de Margarita</span>
     <h1>Dream<b>Fit</b><br>Gym Center</h1>
@@ -366,7 +397,7 @@ a.dato:hover{transform:translateX(4px);box-shadow:0 10px 30px rgba(47,107,255,.1
   </div>
 </header>
 
-<div class="cinta" aria-hidden="true"><div><span>Fuerza</span><span>Disciplina</span><span>Comunidad</span><span>Resultados</span><span>Constancia</span><span>Técnica</span><span>Fuerza</span><span>Disciplina</span><span>Comunidad</span><span>Resultados</span><span>Constancia</span><span>Técnica</span><span>Fuerza</span><span>Disciplina</span><span>Comunidad</span><span>Resultados</span><span>Constancia</span><span>Técnica</span><span>Fuerza</span><span>Disciplina</span><span>Comunidad</span><span>Resultados</span><span>Constancia</span><span>Técnica</span></div></div>
+<div class="cinta" aria-hidden="true"><div class="cinta-pista"><span>Fuerza</span><span>Constancia</span><span>Comunidad</span><span>Disciplina</span><span>Técnica</span><span>Progreso</span><span>Fuerza</span><span>Constancia</span><span>Comunidad</span><span>Disciplina</span><span>Técnica</span><span>Progreso</span></div></div>
 
 <section id="incluye">
   <div class="contenedor">
@@ -424,7 +455,7 @@ a.dato:hover{transform:translateX(4px);box-shadow:0 10px 30px rgba(47,107,255,.1
     </div>
     <div class="regla aparece">
       <svg><use href="#i-cal"/></svg>
-      <div><b>¿Cuándo pagas?</b> Si te inscribes entre el 1 y el 15, tu mensualidad vence el 15 de cada mes; si entras después del 15, vence el 30. Pregunta por las promociones vigentes.</div>
+      <div><b>¿Cuándo pagas?</b> Tu mensualidad vence el 30 de cada mes. Pregunta por las promociones vigentes.</div>
     </div>
   </div>
 </section>
@@ -660,6 +691,55 @@ a.dato:hover{transform:translateX(4px);box-shadow:0 10px 30px rgba(47,107,255,.1
         requestAnimationFrame(() => { hero.style.backgroundPosition = 'center calc(50% + ' + (scrollY * .28).toFixed(1) + 'px)'; espera = false; });
       }, { passive: true });
     }
+  })();
+</script>
+<script id="escena-energia">
+  // Portada: chispas de energía que suben y una línea de pulso que recorre la pantalla
+  (() => {
+    const cv = document.getElementById('escena'); if (!cv || !cv.getContext) return;
+    const ctx = cv.getContext('2d'), hero = cv.parentElement;
+    const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let w = 0, h = 0, S = [], tAnt = 0;
+    const ptr = { x: -9999, y: -9999 };
+    const nueva = (alAzar) => ({ x: Math.random() * w, y: alAzar ? Math.random() * h : h + 10, v: 18 + Math.random() * 55, s: 0.8 + Math.random() * 2.2, f: Math.random() * 6.28, a: 0.25 + Math.random() * 0.7, b: Math.random() < 0.3 });
+    const crear = () => {
+      const b = hero.getBoundingClientRect(), d = Math.min(devicePixelRatio || 1, 1.5);
+      w = b.width; h = b.height; cv.width = Math.round(w * d); cv.height = Math.round(h * d); ctx.setTransform(d, 0, 0, d, 0, 0);
+      S = Array.from({ length: w < 760 ? 60 : 130 }, () => nueva(true));
+    };
+    // Forma de un latido: plano, onda pequeña, pico alto, caída, onda suave
+    const P = 300;
+    const latido = (x) => { const u = (((x % P) + P) % P) / P; const g = (c, a, an) => a * Math.exp(-((u - c) ** 2) / an); return g(0.3, -0.12, 0.0009) + g(0.4, 1, 0.00022) + g(0.435, -0.34, 0.00018) + g(0.6, -0.2, 0.002); };
+    const pintar = (t) => {
+      const dt = Math.min(0.05, Math.max(0.001, t - tAnt)); tAnt = t;
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalCompositeOperation = 'lighter';
+      for (const p of S) {
+        p.y -= p.v * dt; p.x += Math.sin(t * 0.9 + p.f) * 10 * dt;
+        const dx = p.x - ptr.x, dy = p.y - ptr.y, d2 = dx * dx + dy * dy;
+        if (d2 < 14400 && d2 > 1) { const d = Math.sqrt(d2), f = ((120 - d) / 120) * 90 * dt; p.x += (dx / d) * f; p.y += (dy / d) * f; }
+        if (p.y < -12) Object.assign(p, nueva(false));
+        const vida = Math.min(1, p.y / (h * 0.5)) * p.a * (0.55 + 0.45 * Math.sin(t * 3 + p.f));
+        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.s * 5);
+        g.addColorStop(0, p.b ? `rgba(255,255,255,${vida})` : `rgba(110,200,255,${vida})`); g.addColorStop(0.3, `rgba(60,130,255,${vida * 0.45})`); g.addColorStop(1, 'rgba(47,107,255,0)');
+        ctx.fillStyle = g; ctx.fillRect(p.x - p.s * 5, p.y - p.s * 5, p.s * 10, p.s * 10);
+      }
+      // Línea de pulso
+      const base = h * 0.94, amp = Math.min(70, h * 0.085), cabeza = (t * 240) % (w + 500), cola = 460;
+      const trazo = (desde, hasta) => { ctx.beginPath(); for (let x = Math.max(0, desde); x <= Math.min(w, hasta); x += 2) { const y = base - latido(x) * amp; x <= Math.max(0, desde) ? ctx.moveTo(x, y) : ctx.lineTo(x, y); } ctx.stroke(); };
+      ctx.lineJoin = 'round'; ctx.lineWidth = 1.2; ctx.strokeStyle = 'rgba(90,162,255,.16)'; trazo(0, w);
+      if (cabeza - cola < w) {
+        const g = ctx.createLinearGradient(cabeza - cola, 0, cabeza, 0); g.addColorStop(0, 'rgba(77,195,255,0)'); g.addColorStop(1, 'rgba(150,225,255,.95)');
+        ctx.strokeStyle = g; ctx.lineWidth = 2.4; ctx.shadowColor = '#4dc3ff'; ctx.shadowBlur = 16; trazo(cabeza - cola, cabeza); ctx.shadowBlur = 0;
+        if (cabeza <= w) { const y = base - latido(cabeza) * amp; const g2 = ctx.createRadialGradient(cabeza, y, 0, cabeza, y, 16); g2.addColorStop(0, 'rgba(255,255,255,.95)'); g2.addColorStop(0.3, 'rgba(110,200,255,.6)'); g2.addColorStop(1, 'rgba(77,195,255,0)'); ctx.fillStyle = g2; ctx.fillRect(cabeza - 16, y - 16, 32, 32); }
+      }
+      ctx.globalCompositeOperation = 'source-over';
+    };
+    const cuadro = (ts) => { const b = cv.getBoundingClientRect(); if (b.bottom > 0 && !document.hidden) pintar(ts / 1000); requestAnimationFrame(cuadro); };
+    crear();
+    let tr; addEventListener('resize', () => { clearTimeout(tr); tr = setTimeout(() => { crear(); if (quieto) pintar(1.2); }, 150); });
+    addEventListener('pointermove', (e) => { const b = cv.getBoundingClientRect(); ptr.x = e.clientX - b.left; ptr.y = e.clientY - b.top; }, { passive: true });
+    if (quieto) pintar(1.2); else requestAnimationFrame(cuadro);
   })();
 </script>
 </body>
