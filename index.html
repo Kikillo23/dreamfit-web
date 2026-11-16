@@ -323,12 +323,6 @@ body{background-color:var(--fondo);background-image:radial-gradient(50% 40% at 9
 .btn-borde{background:rgba(255,255,255,.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .btn-azul{box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 10px 34px rgba(47,107,255,.5)}
 
-/* Cinta de palabras */
-.cinta{overflow:hidden;padding:22px 0;border-block:1px solid var(--borde);background:rgba(120,160,255,.04);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-.cinta-pista{display:flex;gap:40px;width:max-content;animation:corre 32s linear infinite;font-family:Rajdhani,Inter,sans-serif;font-weight:700;font-size:clamp(1.6rem,4vw,2.6rem);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;line-height:1}
-.cinta-pista span{display:inline-flex;align-items:center;gap:40px;color:transparent;-webkit-text-stroke:1.2px rgba(140,180,255,.55)}
-.cinta-pista span:nth-child(3n+1){color:#e8edff;-webkit-text-stroke:0}
-.cinta-pista span::after{content:"";width:10px;height:10px;border-radius:2px;background:var(--neon);box-shadow:0 0 14px var(--neon);transform:rotate(45deg)}
 @keyframes corre{to{transform:translateX(-50%)}}
 
 .card,.plan,.coach,.horario,.dato,.cambio,.miembros,.regla{background:var(--vidrio);border-color:var(--borde);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(255,255,255,.07) inset,0 24px 50px -32px rgba(0,0,0,.9)}
@@ -343,7 +337,6 @@ body{background-color:var(--fondo);background-image:radial-gradient(50% 40% at 9
 .consulta input{background:rgba(0,0,0,.35)}
 #contacto{background:transparent}
 @media (max-width:900px){.hero::before{background:linear-gradient(180deg,rgba(3,5,15,.6) 0,rgba(3,5,15,.78) 55%,var(--fondo) 100%),radial-gradient(ellipse at 20% 30%,rgba(47,107,255,.35),transparent 60%)}}
-@media (prefers-reduced-motion:reduce){.cinta-pista{animation:none}}
 </style>
 </head>
 <body>
@@ -397,7 +390,6 @@ body{background-color:var(--fondo);background-image:radial-gradient(50% 40% at 9
   </div>
 </header>
 
-<div class="cinta" aria-hidden="true"><div class="cinta-pista"><span>Fuerza</span><span>Constancia</span><span>Comunidad</span><span>Disciplina</span><span>Técnica</span><span>Progreso</span><span>Fuerza</span><span>Constancia</span><span>Comunidad</span><span>Disciplina</span><span>Técnica</span><span>Progreso</span></div></div>
 
 <section id="incluye">
   <div class="contenedor">
